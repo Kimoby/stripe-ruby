@@ -74,7 +74,7 @@ module Stripe
         # Stripe::APIOperations::Create), then use the URL to create a new
         # resource. Otherwise, generate a URL based on the object's identifier
         # for a normal update.
-        if self[:id].nil? && self.class.respond_to?(:create)
+        if self.id.nil? && self.class.respond_to?(:create)
           self.class.resource_url
         else
           resource_url
